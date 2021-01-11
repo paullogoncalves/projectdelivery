@@ -24,6 +24,14 @@ public class ProductService {
 		
 	}
 	
+	public List<ProductDTO> findAllByOrderByNameAsc() {
+		List<Product> list = repo.findAllByOrderByNameAsc();
+		return list.stream().map(p -> new ProductDTO(p)).collect(Collectors.toList());
+	}
+	
+
+	
 }
+
 
 	
